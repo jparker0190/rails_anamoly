@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Portfolios</h1>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
 <% @portfolios.each do |portfolio| %>
 <table>
   <thead>

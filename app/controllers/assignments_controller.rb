@@ -2,7 +2,6 @@ class AssignmentsController < ApplicationController
  before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
  # GET /assignments
- # GET /assignments.json
  def index
    @assignments = Assignment.all
    if params[:portfolio_id]
@@ -13,7 +12,6 @@ class AssignmentsController < ApplicationController
  end
 
  # GET /assignments/1
- # GET /assignments/1.json
  def show
  end
 
@@ -26,8 +24,6 @@ class AssignmentsController < ApplicationController
  def edit
  end
 
- # POST /assignments
- # POST /assignments.json
  def create
    @assignment = Assignment.new(assignment_params)
 
@@ -57,7 +53,6 @@ class AssignmentsController < ApplicationController
  end
 
  # DELETE /assignments/1
- # DELETE /assignments/1.json
  def destroy
    @assignment.destroy
    respond_to do |format|
@@ -67,12 +62,11 @@ class AssignmentsController < ApplicationController
  end
 
  private
-   # Use callbacks to share common setup or constraints between actions.
    def set_assignment
      @assignment = Assignment.find(params[:id])
    end
 
-   # Never trust parameters from the scary internet, only allow the white list through.
+ 
    def assignment_params
      params.require(:assignment).permit(:stock_id, :portfolio_id)
    end

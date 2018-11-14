@@ -2,15 +2,14 @@ class PortfoliosController < ApplicationController
  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
 
  # GET /portfolios
- # GET /portfolios.json
+ #only shows the current user's portfolio
  def index
-   @portfolios = Portfolio.includes(:stocks).all
+   @portfolios = current_user.portfolios.includes(:stocks).all
 
 
  end
 
- # GET /portfolios/1
- # GET /portfolios/1.json
+ # GET /portfolios/:id
  def show
  end
 
@@ -19,14 +18,14 @@ class PortfoliosController < ApplicationController
    @portfolio = Portfolio.new
  end
 
- # GET /portfolios/1/edit
+ # GET /portfolios/:id/edit
  def edit
  end
 
  # POST /portfolios
- # POST /portfolios.json
+
  def create
-   @portfolio = Portfolio.new(portfolio_params)
+   @portfolio = current_user.portfolios.new(portfolio_params)
 
    respond_to do |format|
      if @portfolio.save
@@ -39,8 +38,7 @@ class PortfoliosController < ApplicationController
    end
  end
 
- # PATCH/PUT /portfolios/1
- # PATCH/PUT /portfolios/1.json
+ # PATCH/PUT /portfolios/:id
  def update
    respond_to do |format|
      if @portfolio.update(portfolio_params)
@@ -53,8 +51,7 @@ class PortfoliosController < ApplicationController
    end
  end
 
- # DELETE /portfolios/1
- # DELETE /portfolios/1.json
+ # DELETE /portfolios/:id
  def destroy
    @portfolio.destroy
    respond_to do |format|
@@ -64,12 +61,10 @@ class PortfoliosController < ApplicationController
  end
 
  private
-   # Use callbacks to share common setup or constraints between actions.
    def set_portfolio
      @portfolio = Portfolio.find(params[:id])
    end
 
-   # Never trust parameters from the scary internet, only allow the white list through.
    def portfolio_params
      params.require(:portfolio).permit(:name)
    end
