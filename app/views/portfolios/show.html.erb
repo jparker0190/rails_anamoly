@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<body class="bg-dark"> 
+  <div class="container text-center">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header text-center "><strong>You added the below portfolio</strong> </div>
+        <div class="card-body">
+          <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @portfolio.name %>
-</p>
+          <p>
+            <%= @portfolio.name %>
+          </p>
 
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+          <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+          <%= link_to 'Home', portfolios_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
