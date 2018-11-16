@@ -1,6 +1,12 @@
-<h1>Editing Portfolio</h1>
+<div class="container text-center">
+  <div class="card card-login mx-auto mt-5">
+    <div class="card-header text-center">Edit Portfolio Name</div>
+      <div class="card-body text-center">
+        <%= render 'form', portfolio: @portfolio %>
 
-<%= render 'form', portfolio: @portfolio %>
-
-<%= link_to 'Show', @portfolio %> |
-<%= link_to 'Back', portfolios_path %>
+        <%= link_to 'Show', @portfolio %> |
+        <%= link_to 'Home', portfolios_path %>
+      </div>
+    </div>
+  </div>
+</div>

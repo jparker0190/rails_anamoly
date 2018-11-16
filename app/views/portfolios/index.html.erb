@@ -1,12 +1,12 @@
 <body class="bg-dark"> 
   <div class="container text-center">
     <div class="card card-login mx-auto mt-5">
-    <div class="row">
-      <div class="card-header text-center col-10">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>Portfolios</strong> </div>
-      <div class="card-header text-left col-2"><%= link_to 'Sign out', destroy_user_session_path, method: :delete%></div>
-      </div>
+       <div class="row">
+            <div class="card-header text-right col-3"></div>
+            <div class="card-header text-center col-6"><strong>Portfolios</strong> </div>
+            <div class="card-header text-right col-3"><%= link_to 'Sign out',      destroy_user_session_path, method: :delete%>&nbsp&nbsp</div>
+         </div><!--ending div for "row"-->
         <div class="card-body">
-          <p id="notice"><%= notice %></p>
          
           <% @portfolios.each do |portfolio| %>
           <table>
@@ -19,9 +19,7 @@
             <tbody>
                 <tr>
                   <td><%= portfolio.id %></td>
-                  <!--<td><%= link_to 'Show', portfolio %></td>-->
                   <td><%= link_to 'Assign Stock', new_portfolio_assignment_path(portfolio) %></td>
-                  <!--<td><%= link_to 'Show Available Stocks', stock_path(portfolio) %></td>-->
                   <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
                   <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
@@ -36,14 +34,11 @@
                   <td><%= link_to 'Remove Stock', a, method: :delete, data: { confirm: 'Are you sure?'}%></td>
                   </tr>
                 <%end%>
-          
             </tbody>
           </table>
-
-            <%end%>
+          <%end%>
           <br>
-
-          <%= link_to 'New Portfolio', new_portfolio_path %> |
+          <%= link_to 'Create a New Portfolio', new_portfolio_path %> |
           <%= link_to 'Create a new Stock', new_stock_path%>
         </div>
       </div>
