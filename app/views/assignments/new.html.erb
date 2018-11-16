@@ -1,6 +1,12 @@
-<h1>New Assignment</h1>
+<div class="container text-center">
+  <div class="card card-login mx-auto mt-5">
+    <div class="card-header text-center">Assign a Stock</div>
+      <div class="card-body text-center">
+        <%= render 'form', assignment: @assignment %>
 
-<%= render 'form', assignment: @assignment %>
-
-<%= link_to 'Back', assignments_path %> |
-<%= link_to 'Home', portfolios_path%>
+        <%= link_to 'Back', assignments_path %> |
+        <%= link_to 'Home', portfolios_path%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,8 +14,8 @@
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= assignment.stock_id %></td>
-        <td><%= assignment.portfolio_id %></td>
+        <td><%= assignment.stock.ticker %></td>
+        <td><%= assignment.portfolio.name %></td>
         <td><%= link_to 'Show', assignment %></td>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

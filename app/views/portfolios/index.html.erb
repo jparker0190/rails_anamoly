@@ -3,45 +3,37 @@
     <div class="card card-login mx-auto mt-5">
        <div class="row">
             <div class="card-header text-right col-3"></div>
-            <div class="card-header text-center col-6"><strong>Portfolios</strong> </div>
-            <div class="card-header text-right col-3"><%= link_to 'Sign out',      destroy_user_session_path, method: :delete%>&nbsp&nbsp</div>
+            <div class="card-header text-center col-6"><strong>Portfolios</strong></div>
+            <div class="card-header text-right col-3"><%= link_to 'Sign out', destroy_user_session_path, method: :delete%>&nbsp&nbsp</div>
          </div><!--ending div for "row"-->
+
         <div class="card-body">
-         
-          <% @portfolios.each do |portfolio| %>
-          <table>
-            <thead>
-              <tr>
-                <th><%= portfolio.name %></th>
-                <th colspan="3"></th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <td><%= portfolio.id %></td>
-                  <td><%= link_to 'Assign Stock', new_portfolio_assignment_path(portfolio) %></td>
-                  <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-                  <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                </tr>
-                <tr>
-                <td>Ticker</td>
-                <td>Price</td>
-                </tr>
-                <% portfolio.stocks.each do |a|%>
-                  <tr>
-                  <td><%= a.ticker %></td>
-                  <td><%=a.price%></td>
-                  <td><%= link_to 'Remove Stock', a, method: :delete, data: { confirm: 'Are you sure?'}%></td>
-                  </tr>
-                <%end%>
-            </tbody>
-          </table>
-          <%end%>
-          <br>
-          <%= link_to 'Create a New Portfolio', new_portfolio_path %> |
-          <%= link_to 'Create a new Stock', new_stock_path%>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+          <div class='form-group'>
+            <% @portfolios.each do |portfolio| %>
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                 <thead>
+                      <strong><%= portfolio.name %></strong>
+                   <tr>
+                    <th>Ticker</th>
+                    <th>Price</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                  <% portfolio.stocks.each do |a|%>
+                   <tr>
+                     <td><%= a.ticker %></td>
+                     <td><%=a.price%></td>
+                   </tr>
+                  <%end%>
+                 </tbody>
+              </table>
+              <%= link_to 'Add stock', new_portfolio_assignment_path(portfolio) %>  |
+              <%= link_to 'Edit Portfolio Holdings', assignments_path(portfolio) %>  |
+              <%= link_to 'Delete Portfolio', portfolio, method: :delete, data: {confirm: 'Really?'} %><br><br>
+            <%end%>
+          </div><!--ending div for "form-group"-->
+        </div><!--ending div for "card-body"-->
+    </div><!-- ending div for "card card-login mx-auto mt-5"-->
+      <%= link_to 'Create a New Portfolio', new_portfolio_path %> | <%= link_to 'Create a new Stock', new_stock_path%>
+  </div><!--ending div for "container text-center"-->
+</body><!--ending body "bg-dark"-->

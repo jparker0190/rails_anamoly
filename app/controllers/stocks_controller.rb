@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+ skip_before_action :verify_authenticity_token
  before_action :set_stock, only: [:show, :edit, :update, :destroy]
 
  # GET /stocks
@@ -49,11 +50,13 @@ class StocksController < ApplicationController
 
  # DELETE /stocks/:id
  def destroy
-   @stock.destroy
-   respond_to do |format|
-     format.html { redirect_to stocks_url, notice: 'Stock was successfully destroyed.' }
-     format.json { head :no_content }
-   end
+  # @stock.destroy
+   #respond_to do |format|
+    # format.html { redirect_to stocks_url, notice: 'Stock was successfully destroyed.' }
+     #format.json { head :no_content }
+   #end
+   Stock.find_by(:id => params[:id]).destroy
+   redirect_to stocks_path
  end
 
  private

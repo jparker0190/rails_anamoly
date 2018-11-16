@@ -1,15 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="container text-center">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header text-center "><strong>Here is your Portfolio</strong> </div>
+        <div class="card-body">
+          <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Ticker:</strong>
-  <%= @assignment.stock.ticker %>
-</p>
+          <p>
+            <strong>Ticker:</strong>
+            <%= @assignment.stock.ticker %>
+          </p>
 
-<p>
-  <strong>Portfolio:</strong>
-  <%= @assignment.portfolio.name %>
-</p>
+          <p>
+            <strong>Portfolio:</strong>
+            <%= @assignment.portfolio.name %>
+          </p>
 
-<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
-<%= link_to 'Back', assignments_path %> |
-<%= link_to 'Home', portfolios_path%>
+          <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+          <%= link_to 'Back', assignments_path %> |
+          <%= link_to 'Home', portfolios_path%>
+        </div>
+     </div>
+   </div>
+</div>
