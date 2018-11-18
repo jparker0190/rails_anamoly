@@ -1,5 +1,11 @@
-<h1>New Stock</h1>
+<div class="container text-center">
+  <div class="card card-login mx-auto mt-5">
+    <div class="card-header text-center">New Stock</div>
+      <div class="card-body text-center">
+        <%= render 'form', stock: @stock %>
 
-<%= render 'form', stock: @stock %>
-
-<%= link_to 'Back', stocks_path %>
+        <%= link_to 'Back', stocks_path %>
+      </div>
+    </div>
+  </div>
+</div>

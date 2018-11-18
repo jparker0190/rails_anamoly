@@ -1,6 +1,12 @@
-<h1>Editing Stock</h1>
-
-<%= render 'form', stock: @stock %>
-
-<%= link_to 'Show', @stock %> |
-<%= link_to 'Back', stocks_path %>
+<div class="container text-center">
+  <div class="card card-login mx-auto mt-5">
+    <div class="card-header text-center">Edit Stock</div>
+      <div class="card-body text-center">
+        <%= render 'form', stock: @stock %>
+        <%= link_to 'Show', @stock %> |
+        <%= link_to 'Back', stocks_path %> |
+        <%= link_to 'Home', portfolios_path%>
+      </div>
+    </div>
+  </div>
+</div>

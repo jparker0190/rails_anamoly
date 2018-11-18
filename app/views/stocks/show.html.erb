@@ -1,15 +1,22 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
+<div class="container text-center">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header text-center "><strong>Here is your Portfolio</strong> </div>
+        <div class="card-body">
+          <p>
+            <strong>Ticker:</strong>
+            <%= @stock.ticker %>
+          </p>
 
-<p>
-  <strong>Ticker:</strong>
-  <%= @stock.ticker %>
-</p>
+          <p>
+            <strong>Price:</strong>
+            <%= @stock.price %>
+          </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @stock.price %>
-</p>
-
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %> |
-<%= link_to 'Home', portfolios_path%>
+          <%= link_to 'Edit', edit_stock_path(@stock) %> |
+          <%= link_to 'Back', stocks_path %> |
+          <%= link_to 'Home', portfolios_path%>
+       </div>
+     </div>
+   </div>
+</div>
