@@ -28,7 +28,7 @@
                  </tbody>
               </table>
               <%= link_to 'Add stock', new_portfolio_assignment_path(portfolio) %>  |
-              <%= link_to 'Edit Portfolio Holdings', assignments_path(portfolio) %>  |
+              <%= link_to 'Edit Portfolio Holdings', portfolio_assignments_path(portfolio) %>  |
               <%= link_to 'Delete Portfolio', portfolio, method: :delete, data: {confirm: 'Really?'} %><br><br>
             <%end%>
           </div><!--ending div for "form-group"-->
