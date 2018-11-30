@@ -26,7 +26,7 @@
       <div class="form-group text-center">
         <%= form.label "Assign a stock" %>
         <%= form.select(:stock_id) do%>
-        <%= options_from_collection_for_select(Stock.all, :id, :ticker, :selected => @assignment.stock_id) %>
+        <%= options_from_collection_for_select(Stock.alphabatize, :id, :ticker, :selected => @assignment.stock_id) %>
         <%end%>
       </div>
 
