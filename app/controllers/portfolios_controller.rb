@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
  before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
 
- # GET /portfolios
+ # GET /portfolios adding commit  
  #only shows the current user's portfolio
  def index
    @portfolios = current_user.portfolios.includes(:stocks).all
