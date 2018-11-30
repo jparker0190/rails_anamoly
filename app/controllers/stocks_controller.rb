@@ -4,7 +4,7 @@ class StocksController < ApplicationController
 
  # GET /stocks
  def index
-   @stocks = Stock.all
+   @stocks = Stock.alphabatize
  end
 
  # GET /stocks/:id
@@ -50,11 +50,6 @@ class StocksController < ApplicationController
 
  # DELETE /stocks/:id
  def destroy
-  # @stock.destroy
-   #respond_to do |format|
-    # format.html { redirect_to stocks_url, notice: 'Stock was successfully destroyed.' }
-     #format.json { head :no_content }
-   #end
    Stock.find_by(:id => params[:id]).destroy
    redirect_to stocks_path
  end
