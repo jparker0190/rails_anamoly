@@ -23,28 +23,6 @@ class SessionsController < ApplicationController
      end
  end
 
-<<<<<<< HEAD
- def login
-     @user = User.find_by(name: params[:user][:name])
-     if @user && @user.authenticate(params[:user][:password])
-         session[:user_id] = @user.id
-         redirect_to home_path
-     else
-         redirect_to login_path
-     end
- end
- 
- def logout
-     if session[:user_id]
-         session.clear
-         redirect_to root_path
-     else
-         redirect_to home_path
-     end
- end
-
-=======
->>>>>>> cf5eb6ed081838d51bcef01291d166be06d73aa9
  private
 #commimt    
  def auth
