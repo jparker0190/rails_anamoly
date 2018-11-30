@@ -68,6 +68,6 @@ class AssignmentsController < ApplicationController
 
  
    def assignment_params
-     params.require(:assignment).permit(:stock_id, :portfolio_id)
+     params.require(:assignment).permit(:stock_id, :portfolio_id, :description)
    end
 end

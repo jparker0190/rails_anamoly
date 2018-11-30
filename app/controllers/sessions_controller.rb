@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
  end
 
  def login
-     @user = Crew.find_by(name: params[:user][:name])
+     @user = User.find_by(name: params[:user][:name])
      if @user && @user.authenticate(params[:user][:password])
          session[:user_id] = @user.id
          redirect_to home_path
@@ -48,7 +48,7 @@ class SessionsController < ApplicationController
  end
 
  private
-
+#commimt    
  def auth
      request.env['omniauth.auth']
  end
