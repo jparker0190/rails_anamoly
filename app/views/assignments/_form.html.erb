@@ -13,6 +13,7 @@
       <% end %>
 
       <div class="form-group text-center">
+        <%= form.text_field :description, autofocus: true, class: 'form-control', placeholder: "Enter a description" %>
         <%=form.label "Pick which portfolio"%>
         <%= form.select(:portfolio_id) do %>
         <%= options_from_collection_for_select(Portfolio.all, :id, :name, :selected => @assignment.portfolio_id) %>
