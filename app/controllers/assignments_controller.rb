@@ -14,6 +14,7 @@ class AssignmentsController < ApplicationController
  # GET /assignments/1
  def show
  end
+ 
 
  # GET /assignments/new
  def new
