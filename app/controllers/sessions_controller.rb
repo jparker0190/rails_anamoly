@@ -8,11 +8,6 @@ class SessionsController < ApplicationController
  def home
  end
 
- def new
-     @user = User.new
-     render 'login'
- end
-
  # only called when signing in with Facebook
  def facebook
      @user = User.find_or_create_by(uid: auth['uid']) do |c|
@@ -28,6 +23,7 @@ class SessionsController < ApplicationController
      end
  end
 
+<<<<<<< HEAD
  def login
      @user = User.find_by(name: params[:user][:name])
      if @user && @user.authenticate(params[:user][:password])
@@ -47,13 +43,11 @@ class SessionsController < ApplicationController
      end
  end
 
+=======
+>>>>>>> cf5eb6ed081838d51bcef01291d166be06d73aa9
  private
 #commimt    
  def auth
      request.env['omniauth.auth']
- end
-
- def set_crew
-     @user = User.find_by(:id => session[:user_id])
  end
 end
